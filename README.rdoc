@@ -1,5 +1,5 @@
 == Dawn.js
 
-Hi Dawn!  This is the main code for the new TWS site.  Images + story pages + games don't live here.  Enjoy the new site and I will continue to do things to it as needed.
+Hi Dawn!  This is the main code for the new TWS site.  Images + story pages don't live here.  Enjoy the new site and I will continue to do things to it as needed.
 
 Christian

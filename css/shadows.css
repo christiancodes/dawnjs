@@ -2,6 +2,11 @@ html {
   background-color: #F7F1E8;
 }
 
+p {
+  display: block;
+  width: 100%;
+}
+
 body {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   text-align: left;
@@ -226,7 +231,13 @@ a:hover {
   margin: 20px 0 0 -150px;
 }
 
+.bigger-text {
+  font-size: 1.75em !important;
+}
+
 @media screen and (max-width: 800px) {
+  /*Sorta small*/
+
   .headerwords {
     display: none !important;
   }
@@ -234,9 +245,11 @@ a:hover {
   #content {
     padding: 15px 50px;
   }
+
 }
 
 @media screen and (max-width: 500px) {
+  /*Super small*/
 
   #content {
     padding: 15px 10px;
@@ -246,4 +259,5 @@ a:hover {
     float: none !important;
     margin: 0 auto !important;
   }
+
 }
