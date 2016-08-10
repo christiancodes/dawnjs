@@ -113,6 +113,7 @@ a:hover {
   vertical-align: bottom;
   margin: 20px 110px 0px 50px;
   display: inline-block;
+  position: relative;
 }
 
 .menuitem {
@@ -146,10 +147,11 @@ a:hover {
   font-weight: 400;
 }
 
+/* The dropdown */
 .submenu {
   position: absolute;
-    left: 200px;
-    top: 75px;
+    left: 50px;
+    top: 50px;
   background-color: #ffffff;
   width: 185px;
   border-radius: 10px;
