@@ -149,7 +149,7 @@ function generateArchive() {
     $('#archive-contents').append("<h4>" + chapters[i].title + "</h4>");
     for (var j = chapters[i].startPage; j < chapters[i].endPage + 1; j++) {
       $('#archive-contents').append(
-        "<a href=\"i-0" + i + "-" + ( j >= 10 ? j : "0" + j ) + ".php\" class=\"link\">" + j + "</a> ");
+        "<a href=\"i-0" + i + "-" + ( j >= 10 ? j : "0" + j ) + ".php\" class=\"link bigger-text\">" + j + "</a> ");
     }
   }
 }

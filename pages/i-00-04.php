@@ -2,10 +2,10 @@
 
   <div id="enchant-stage"></div>
 
-  <p>&gt;Move with arrow keys or WASD</p>
-  <p>&gt;Select with Space or X</p>
-  <p>&gt;Menu with Z</p>
-  <p>&gt;Cancel with ESC or Z</p>
+  <p class="bigger-text">&gt;Move with arrow keys or WASD</p>
+  <p class="bigger-text">&gt;Select with Space or X</p>
+  <p class="bigger-text">&gt;Menu with Z</p>
+  <p class="bigger-text">&gt;Cancel with ESC or Z</p>
 
 </div>
 
