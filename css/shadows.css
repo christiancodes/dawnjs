@@ -247,6 +247,10 @@ a:hover {
     padding: 15px 50px;
   }
 
+  #progress-wrapper {
+    display: none !important;
+  }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -259,6 +263,10 @@ a:hover {
   .team-left, .team-right {
     float: none !important;
     margin: 0 auto !important;
+  }
+
+  #progress-wrapper {
+    display: none !important;
   }
 
 }

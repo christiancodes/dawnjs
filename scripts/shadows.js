@@ -117,6 +117,7 @@ function navigateTo(codeClicked) {
         $('#header-switcher').load("main-header.php");
       }
       calculateNextButton();
+      buildProgressTable();
 
       $('#content').fadeIn('slow');
       $('#footer-bar').fadeIn('slow');

@@ -2,16 +2,16 @@
   width: 75px;
   border: #000000 solid 1px;
   border-radius: 5px;
-
   background: #fff;
-  margin-left: 766px;
-  margin-top: 50px;
   box-shadow: 0 0 10px #777;
   padding: 25px;
   z-index: 999;
   display: inline-block;
 
   text-align: center;
+  position: absolute;
+    right: -20px;
+    top: -5px;
 }
 
 #progress-keeper {
@@ -31,14 +31,15 @@
 }
 
 .game {
-  background-color: #E195E2;
+  background-color: #e4c8e5;
 }
 
 .cursor {
-  background-color: #FC5D5D;
+  background-color: #ff9d9d;
 }
 
 .chapter-cell {
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 2px;
+  text-align: center;
 }

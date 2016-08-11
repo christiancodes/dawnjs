@@ -21,7 +21,14 @@
       <?php include 'main-header.php' ?>
     </div>
 
+
     <div id="content" onmouseover="$('.submenu').fadeOut();">
+      <div id="progress-keeper">
+        <div id="progress-wrapper">
+          <div id="title-box"></div>
+          <table id="progress-table"></table>
+        </div>
+      </div>
       <div id="page-switcher">
         <?php include 'pages/news.php' ?>
       </div>

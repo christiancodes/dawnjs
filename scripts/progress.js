@@ -1,7 +1,16 @@
 function buildProgressTable() {
-  var path = window.location.pathname;
-  var currentLoc = path.substr(path.indexOf("i.") + 2, 5).split(".");
+  var path = window.location.hash;
+  var currentLoc = path.substr(path.indexOf("i-") + 2, 5).split("-");
+
+  if( !parseInt(currentLoc[0]) && !parseInt(currentLoc[1])) {
+    $('#progress-keeper').fadeOut();
+    return;
+  } else {
+    $('#progress-keeper').fadeIn();
+  }
+
   var currentChapter = chapters[ parseInt(currentLoc[0]) ];
+
   var currentPage = parseInt(currentLoc[1]) ;
 
   var progressTable = document.getElementById("progress-table");
@@ -14,19 +23,18 @@ function buildProgressTable() {
   var cursorHighlight;
   var gameHighlight;
 
-  for (var i = 0; i < pagesInChapter; i++) {
-
+  for (var i = currentChapter.startPage; i < pagesInChapter + currentChapter.startPage; i++) {
     gameHighlight   = currentChapter.games.indexOf(i) !== -1 ? " game" : "" ;
     cursorHighlight = currentPage === i ? " cursor" : "" ;
 
     progressContent += "<tr><td class=\"chapter-cell" + gameHighlight + cursorHighlight + "\">";
-    progressContent += linkToPage( currentChapter.chapterNum, i + currentChapter.startPage ) + "</td></tr>";
+    progressContent += linkToPage( currentChapter.chapterNum, i ) + "</td></tr>";
   };
 
   progressTable.innerHTML = progressContent;
 }
 
-function linkToPage(chapter, page) {  return "<a href=\"i." + chapter.pad() + "." + page.pad() + ".html\">" + page + "</a>"; }
+function linkToPage(chapter, page) {  return "<a href=\"i-" + chapter.pad() + "-" + page.pad() + ".php\" class=\"link\">" + page + "</a>"; }
 
 Number.prototype.pad = function(size) {
   var s = String(this);
@@ -39,7 +47,7 @@ function progressScroll(){
     contentHeight = 1200;
   var progressObj = document.getElementById("progress-wrapper");
   if(vPosition < contentHeight) {
-    progressObj.style.marginTop = vPosition + 50 + 'px';
+    progressObj.style.marginTop = vPosition + 'px';
   }
 }
 
