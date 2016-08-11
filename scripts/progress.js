@@ -15,7 +15,10 @@ function buildProgressTable() {
 
   var progressTable = document.getElementById("progress-table");
   var titleBox = document.getElementById("title-box");
-  titleBox.innerHTML = "Chapter " + currentChapter.chapterNum.toString() + "<br />" + currentChapter.title;
+  titleBox.innerHTML = "<span>" + possibleLinkToPrevChapter(currentChapter.chapterNum) + "Chapter " +
+                       currentChapter.chapterNum.toString() + possibleLinkToNextChapter(currentChapter.chapterNum)
+                       + "</span><br />" +
+                       "<span>" + currentChapter.title + "</span>";
 
   var pagesInChapter = ( currentChapter.endPage - currentChapter.startPage ) + 1;
 
@@ -35,6 +38,22 @@ function buildProgressTable() {
 }
 
 function linkToPage(chapter, page) {  return "<a href=\"i-" + chapter.pad() + "-" + page.pad() + ".php\" class=\"link\">" + page + "</a>"; }
+
+function possibleLinkToPrevChapter(currentChapterNum) {
+  if(chapters[ currentChapterNum - 1 ]) {
+    prevChapter = currentChapterNum - 1;
+    return "<a href=\"i-" + prevChapter.pad() + "-" + chapters[prevChapter].startPage.pad() + ".php\" class=\"link\">" + "\< </a>";
+  }
+  return "";
+}
+function possibleLinkToNextChapter(currentChapterNum) {
+  if(chapters[ currentChapterNum + 1 ]) {
+    nextChapter = currentChapterNum + 1;
+    return "<a href=\"i-" + nextChapter.pad() + "-" + chapters[nextChapter].startPage.pad() + ".php\" class=\"link\">" + " \></a>";
+  }
+  return "";
+}
+
 
 Number.prototype.pad = function(size) {
   var s = String(this);
