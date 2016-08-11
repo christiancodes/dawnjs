@@ -31,7 +31,8 @@
 }
 
 .game {
-  background-color: #e4c8e5;
+  /*Take away game indicator for now*/
+  /*background-color: #e4c8e5;*/
 }
 
 .cursor {
