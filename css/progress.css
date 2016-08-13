@@ -35,6 +35,12 @@
   /*background-color: #e4c8e5;*/
 }
 
+.hide-button {
+  color: #818080;
+  cursor: pointer;
+  font-size: 0.8em
+}
+
 .cursor {
   background-color: #ff9d9d;
 }

@@ -3,7 +3,7 @@ function buildProgressTable() {
   var currentLoc = path.substr(path.indexOf("i-") + 2, 5).split("-");
 
   if( !parseInt(currentLoc[0]) && !parseInt(currentLoc[1])) {
-    $('#progress-keeper').fadeOut();
+    $('#progress-keeper').hide();
     return;
   } else {
     $('#progress-keeper').fadeIn();
@@ -68,6 +68,10 @@ function progressScroll(){
   if(vPosition < contentHeight) {
     progressObj.style.marginTop = vPosition + 'px';
   }
+}
+
+function hideProgressBar() {
+  $('#progress-wrapper').fadeOut();
 }
 
 buildProgressTable();

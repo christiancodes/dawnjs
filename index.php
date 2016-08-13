@@ -26,6 +26,8 @@
         <div id="progress-wrapper">
           <div id="title-box"></div>
           <table id="progress-table"></table>
+          <br />
+          <a class="hide-button" onclick="hideProgressBar();">Hide this bar</a>
         </div>
       </div>
 
