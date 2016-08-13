@@ -119,7 +119,7 @@ function navigateTo(codeClicked) {
       calculateNextButton();
       buildProgressTable();
 
-      refreshTwitterScript(window.location, "Tweet about Those Without Shadows!");
+      refreshTwitterScript(window.location, "I'm reading Those Without Shadows:");
 
       $('#content').fadeIn('slow');
       $('#footer-bar').fadeIn('slow');
