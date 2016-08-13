@@ -22,9 +22,11 @@
 
   <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fplayerprophet.com%2Fthosewithoutshadows%2F&width=61&layout=button_count&action=like&size=small&show_faces=false&share=false&height=21" width="61" height="21" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 
-  <a class="twitter-share-button"
-    href="https://twitter.com/intent/tweet?text=I'm%20reading%20Those%20Without%20Shadows%3A">
-  Tweet</a>
+  <div id="twitter-button-holder" style="display: inline-block;">
+    <a class="twitter-share-button"
+      href="https://twitter.com/intent/tweet?text=I'm%20reading%20Those%20Without%20Shadows%3A">
+    Tweet</a>
+  </div>
 
   <a href="twsfeed.xml">
     <img src="images/rss.png" alt="RSS" width="33" height="33">

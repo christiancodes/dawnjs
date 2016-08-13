@@ -119,6 +119,8 @@ function navigateTo(codeClicked) {
       calculateNextButton();
       buildProgressTable();
 
+      refreshTwitterScript(window.location, "Tweet about Those Without Shadows!");
+
       $('#content').fadeIn('slow');
       $('#footer-bar').fadeIn('slow');
     });
@@ -153,4 +155,10 @@ function generateArchive() {
         "<a href=\"i-0" + i + "-" + ( j >= 10 ? j : "0" + j ) + ".php\" class=\"link bigger-text\">" + j + "</a> ");
     }
   }
+}
+
+function refreshTwitterScript(share_url, title) {
+  $('#twitter-button-holder').html('&nbsp;');
+  $('#twitter-button-holder').html('<a href="https://twitter.com/share" class="twitter-share-button" data-url="' + share_url +'" data-size="large" data-text="' + title + '" data-count="none">Tweet</a>');
+  twttr.widgets.load();
 }
