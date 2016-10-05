@@ -18,10 +18,47 @@ $(document).ready(function() {
   });
 
   loadPageFromHash();
+
+  document.onkeydown = checkKey;
 });
+
+function checkKey(e) {
+  e = e || window.event;
+  if (e.keyCode == '37') {
+     // left arrow
+     console.log('left!');
+     prevPage();
+  }
+  else if (e.keyCode == '39') {
+    // right arrow
+    console.log('right!');
+    if ( !$('.next-chapter').hasClass('hidden') ) {
+      nextChapter();
+    } else if ( !$('.next-page').hasClass('hidden') ) {
+      nextPage();
+    }
+  }
+}
+
 
 function getHashOfWindow() {
   return window.location.hash.substr(1);
+}
+
+function prevPage() {
+  // dear LORD this code could use some work
+  var code = getHashOfWindow();
+
+  if( getPageNumFromCode(code) || getPageNumFromCode(code) === 0 ) {
+    if( getPageNumFromCode(code) === chapters[getChapterNumFromCode(code)].startPage && getChapterNumFromCode(code) > 0) {
+      // go back a chapter to the last page in that chapter
+      navigateTo( "i-0" + (getChapterNumFromCode(code) - 1) + "-" + (chapters[getChapterNumFromCode(code) - 1].endPage < 10 ? "0" : "") + chapters[getChapterNumFromCode(code) - 1].endPage);
+    } else if( getPageNumFromCode(code) > chapters[getChapterNumFromCode(code)].startPage ) {
+      // go back a page if there is one to go back to in that chapter
+      navigateTo( "i-0" + getChapterNumFromCode(code) + "-" + (getPageNumFromCode(code) - 1 < 10 ? "0" : "") + (getPageNumFromCode(code) - 1));
+    }
+  }
+  scrollToTop();
 }
 
 function nextPage() {
