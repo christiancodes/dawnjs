@@ -48,8 +48,8 @@ function possibleLinkToPrevChapter(currentChapterNum) {
 }
 function possibleLinkToNextChapter(currentChapterNum) {
   if(chapters[ currentChapterNum + 1 ]) {
-    nextChapter = currentChapterNum + 1;
-    return "<a href=\"i-" + nextChapter.pad() + "-" + chapters[nextChapter].startPage.pad() + ".php\" class=\"link\">" + " \></a>";
+    theNextChapter = currentChapterNum + 1;
+    return "<a href=\"i-" + theNextChapter.pad() + "-" + chapters[theNextChapter].startPage.pad() + ".php\" class=\"link\">" + " \></a>";
   }
   return "";
 }
