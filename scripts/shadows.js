@@ -19,27 +19,37 @@ $(document).ready(function() {
 
   loadPageFromHash();
 
-  document.onkeydown = checkKey;
+  $(document).keydown(function(e) {
+    if(!isGameHere()) {
+      e = e || window.event;
+      if (e.keyCode == '37') {
+         // left arrow
+         console.log('left!');
+         prevPage();
+      }
+      else if (e.keyCode == '39') {
+        // right arrow
+        console.log('right!');
+        if ( !$('.next-chapter').hasClass('hidden') ) {
+          nextChapter();
+        } else if ( !$('.next-page').hasClass('hidden') ) {
+          nextPage();
+        }
+      }
+    }
+  });
 });
 
-function checkKey(e) {
-  e = e || window.event;
-  if (e.keyCode == '37') {
-     // left arrow
-     console.log('left!');
-     prevPage();
-  }
-  else if (e.keyCode == '39') {
-    // right arrow
-    console.log('right!');
-    if ( !$('.next-chapter').hasClass('hidden') ) {
-      nextChapter();
-    } else if ( !$('.next-page').hasClass('hidden') ) {
-      nextPage();
-    }
+function isGameHere() {
+  var code = getHashOfWindow();
+
+  if( chapters[getChapterNumFromCode(code)].games.indexOf( getPageNumFromCode(code) ) !== -1 ) {
+    console.log('is game here!');
+    return true;
+  } else {
+    return false;
   }
 }
-
 
 function getHashOfWindow() {
   return window.location.hash.substr(1);
